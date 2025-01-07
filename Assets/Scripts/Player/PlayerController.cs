@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 3f;
     public float ceilDistance = 1f;
+    public float gravity = 2f;
 
     public Animator cAnimator;
     public SpriteRenderer cRenderer;
@@ -16,11 +17,14 @@ public class PlayerController : MonoBehaviour
 
     // Variable no inspector
     private Vector2 move;
+    private Vector2 normal;
     private bool grounded;
     private bool crouched;
 
     private bool jumpKey;
     private bool crouchKey;
+
+    private Vector3 m_Velocity = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +61,9 @@ public class PlayerController : MonoBehaviour
         PlayerCrouched();
 
         // Accedo al componente rigidbody 2d
-        cRigidbody.linearVelocity = new Vector2(move.x * speed, cRigidbody.linearVelocity.y);
+        Vector2 dir = new Vector2(normal.y, normal.x) * move.x;
+        Vector2 targetVelocity = new Vector2(move.x * speed, cRigidbody.linearVelocity.y);
+        cRigidbody.linearVelocity = Vector3.SmoothDamp(cRigidbody.linearVelocity, targetVelocity, ref m_Velocity, 0.05f);
     }
 
     void PlayerOrientation()
@@ -72,7 +78,10 @@ public class PlayerController : MonoBehaviour
     // Ground detection
     void PlayerGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * 0.2f, Vector2.down, 0.25f, LayerMask.GetMask("Environment"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up * 0.2f, Vector2.down, 0.35f, LayerMask.GetMask("Environment"));
+        RaycastHit2D surfaceHit = Physics2D.Raycast(transform.position + Vector3.up * 1f, Vector2.down, 10f, LayerMask.GetMask("Environment"));
+
+        normal = surfaceHit ? hit.normal : Vector3.down;
 
         if (hit && !grounded) // Check if we have a hit, if not, hit is null and will not enter
         {
@@ -84,6 +93,17 @@ public class PlayerController : MonoBehaviour
         {
             grounded = false;
             Debug.Log("Not Grounded ");
+        }
+
+        if(!hit && cRigidbody.linearVelocity.y < 0)
+        {
+            cAnimator.SetBool("Fall", true);
+            cAnimator.SetBool("Jump", false);
+            Debug.Log("I'm falling");
+        }
+        else
+        {
+            cAnimator.SetBool("Fall", false);
         }
     }
 
