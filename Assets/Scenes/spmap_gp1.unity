@@ -303,7 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59103740}
   - component: {fileID: 59103739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform-long (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202865402}
   - component: {fileID: 202865401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform-long (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2471,7 +2471,7 @@ GameObject:
   - component: {fileID: 1015421435}
   - component: {fileID: 1015421434}
   - component: {fileID: 1015421433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: big-crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2726,7 +2726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077381130}
   - component: {fileID: 1077381129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform-long (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2900,7 +2900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282543665}
   - component: {fileID: 1282543664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform-long (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5187,7 +5187,7 @@ GameObject:
   - component: {fileID: 1406400496}
   - component: {fileID: 1406400495}
   - component: {fileID: 1406400494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: big-crate (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17112,7 +17112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628789332}
   - component: {fileID: 1628789331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform-long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17329,7 +17329,7 @@ GameObject:
   - component: {fileID: 1970232911}
   - component: {fileID: 1970232910}
   - component: {fileID: 1970232909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: big-crate (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17556,10 +17556,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1853231033091216720, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 3735292707494513626, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.96
@@ -17599,10 +17595,6 @@ PrefabInstance:
     - target: {fileID: 3735292707494513626, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7213470969028600255, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

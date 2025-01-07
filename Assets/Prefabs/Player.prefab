@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3195066030722181470}
   - component: {fileID: 8376281689696851795}
   - component: {fileID: 4345099691417630445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 7616817352766091459}
   - component: {fileID: 7579058799370873425}
   - component: {fileID: 5137367686636358131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Render
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ Animator:
   m_GameObject: {fileID: 7213470969028600255}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4cff99bdcba65045bd79a993cb7a7cd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 827d6e4580cc68440afadf374207128c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
