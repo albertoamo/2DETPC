@@ -167,7 +167,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ChangeToMainMenu()
     {
-        SceneManager.UnloadSceneAsync("spmap_demo");
+        SceneManager.UnloadSceneAsync("spmap_gp1");
         SceneManager.LoadScene("spmap_mainmenu", LoadSceneMode.Additive);
 
         ChangeState(GameState.MAINMENU);

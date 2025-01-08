@@ -271,7 +271,11 @@ PrefabInstance:
     - target: {fileID: 6609845266610346576, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1047641501}
+      objectReference: {fileID: 1047641502}
+    - target: {fileID: 6609845266610346576, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToGameplayImmediate
+      objectReference: {fileID: 0}
     - target: {fileID: 8138495188699768868, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

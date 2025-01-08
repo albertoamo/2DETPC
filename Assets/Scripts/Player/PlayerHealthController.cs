@@ -25,11 +25,25 @@ public class PlayerHealthController : MonoBehaviour
     public void Damage()
     {
         if(lives > 0)
+        {
             lives = lives - 1;
+        }
+        
+        // The player has died.
+        if(lives == 0)
+        {
+            GameStateManager statemanager = FindFirstObjectByType<GameStateManager>();
+            statemanager.ChangeState(GameStateManager.GameState.OVER);
+
+            return;
+        }
 
         PlayerController hCtr = gameObject.GetComponent<PlayerController>();
         hCtr.cAnimator.SetBool("Hurt", true);
         StartCoroutine(HurtDelay());
+
+        UIHealth health = FindFirstObjectByType<UIHealth>();
+        health.UpdateHealth(lives);
 
         Debug.Log("The player has taken damage.");
     }
