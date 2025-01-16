@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 // Gamestate pattern
 public class GameStateManager : MonoBehaviour
 {
+    public static GameStateManager INSTANCE;
+
     [Serializable]
     public enum GameState
     {
@@ -22,8 +24,7 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(GameState.MAINMENU);
-        SceneManager.LoadScene("spmap_mainmenu", LoadSceneMode.Additive);
+        INSTANCE = this;
     }
 
     void Update()
@@ -154,8 +155,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ChangeToGameplay()
     {
-        SceneManager.UnloadSceneAsync("spmap_mainmenu");
-        SceneManager.LoadScene("spmap_gp1", LoadSceneMode.Additive);
+        LevelManager.INSTANCE.LoadLevel("spmap_gp1");
 
         ChangeState(GameState.GAMEPLAY);
     }
@@ -167,8 +167,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ChangeToMainMenu()
     {
-        SceneManager.UnloadSceneAsync("spmap_gp1");
-        SceneManager.LoadScene("spmap_mainmenu", LoadSceneMode.Additive);
+        LevelManager.INSTANCE.LoadLevel("spmap_mainmenu");
 
         ChangeState(GameState.MAINMENU);
     }
