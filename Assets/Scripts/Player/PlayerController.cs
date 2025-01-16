@@ -87,19 +87,19 @@ public class PlayerController : MonoBehaviour
         {
             grounded = true;
             cAnimator.SetBool("Jump", false);
-            Debug.Log("Grounded " + hit.collider.name);
+            //Debug.Log("Grounded " + hit.collider.name);
         }
         else if(!hit)
         {
             grounded = false;
-            Debug.Log("Not Grounded ");
+            //Debug.Log("Not Grounded ");
         }
 
         if(!hit && cRigidbody.linearVelocity.y < 0)
         {
             cAnimator.SetBool("Fall", true);
             cAnimator.SetBool("Jump", false);
-            Debug.Log("I'm falling");
+            //Debug.Log("I'm falling");
         }
         else
         {

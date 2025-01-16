@@ -1,3 +1,5 @@
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,18 +20,34 @@ public class LevelManager : MonoBehaviour
     
     public void LoadLevel(string levelName)
     {
-        Scene sceneActual = SceneManager.GetSceneByName(activeLevel);
+        StartCoroutine(LoadLevelAsync(levelName));
+    }
 
-        if(sceneActual != null && sceneActual.isLoaded)
-            SceneManager.UnloadSceneAsync(activeLevel);
-
-        Scene sceneToLoad = SceneManager.GetSceneByName(levelName);
-
-        if (sceneToLoad != null)
+    IEnumerator LoadLevelAsync(string levelName)
+    {
+        if (UIBlackScreen.INSTANCE == null)
         {
-            SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
-            activeLevel = levelName;
+            UIBlackScreen.INSTANCE = FindFirstObjectByType<UIBlackScreen>();
         }
+
+        UIBlackScreen.INSTANCE.FadeIn();
+        {
+            Scene sceneActual = SceneManager.GetSceneByName(activeLevel);
+
+            if (sceneActual != null && sceneActual.isLoaded)
+                SceneManager.UnloadSceneAsync(activeLevel);
+
+            Scene sceneToLoad = SceneManager.GetSceneByName(levelName);
+
+            yield return new WaitForSecondsRealtime(2);
+
+            if (sceneToLoad != null)
+            {
+                SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
+                activeLevel = levelName;
+            }
+        }
+        UIBlackScreen.INSTANCE.FadeOut();
     }
 
     public string GetActiveLevel()
