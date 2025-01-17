@@ -189,12 +189,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147128344191345067, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 530704487931303997, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1047641502}
+    - target: {fileID: 1532979902419491001, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2203226128679762669, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -277,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973218616687153204, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3009037391394630645, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_Name
