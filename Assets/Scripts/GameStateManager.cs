@@ -16,6 +16,7 @@ public class GameStateManager : MonoBehaviour
         MAINMENU,
         WIN,
         OVER,
+        OPTIONS,
         PAUSE
     }
 
@@ -68,6 +69,7 @@ public class GameStateManager : MonoBehaviour
             case GameState.MAINMENU:
                 break;
             case GameState.WIN: break;
+            case GameState.OPTIONS: break;
             case GameState.OVER:
                 break;
             case GameState.PAUSE:
@@ -99,6 +101,14 @@ public class GameStateManager : MonoBehaviour
                 }
                 break;
             case GameState.WIN: break;
+            case GameState.OPTIONS:
+                {
+                    UIOptions menu = FindObjectOfType<UIOptions>(true);
+                    menu.gameObject.SetActive(true);
+
+                    Time.timeScale = 0;
+                }
+                break;
             case GameState.OVER:
                 {
                     UIOverMenu menu = FindObjectOfType<UIOverMenu>(true);
@@ -138,6 +148,14 @@ public class GameStateManager : MonoBehaviour
                 }
                 break;
             case GameState.WIN: break;
+            case GameState.OPTIONS:
+                {
+                    UIOptions menu = FindObjectOfType<UIOptions>(true);
+                    menu.gameObject.SetActive(false);
+
+                    Time.timeScale = 1;
+                }
+                break;
             case GameState.OVER:
                 {
                     UIOverMenu menu = FindObjectOfType<UIOverMenu>(true);
@@ -177,6 +195,11 @@ public class GameStateManager : MonoBehaviour
         ChangeState(GameState.MAINMENU);
     }
 
+    public void ChangeToMainMenuImmediate()
+    {
+        ChangeState(GameState.MAINMENU);
+    }
+
     public void ChangeToPause()
     {
         ChangeState(GameState.PAUSE);
@@ -190,5 +213,10 @@ public class GameStateManager : MonoBehaviour
     public void ChangeToWin()
     {
         ChangeState(GameState.WIN);
+    }
+
+    public void ChangeToOptions()
+    {
+        ChangeState(GameState.OPTIONS);
     }
 }

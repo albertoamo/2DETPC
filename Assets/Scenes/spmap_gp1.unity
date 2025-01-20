@@ -1336,7 +1336,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -16916,6 +16916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2715a23f43f24f64598faf47feba2fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
 --- !u!61 &1628789334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17326,11 +17328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3735292707494513626, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.33
+      value: -5.9
       objectReference: {fileID: 0}
     - target: {fileID: 3735292707494513626, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.27
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3735292707494513626, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_LocalPosition.z
