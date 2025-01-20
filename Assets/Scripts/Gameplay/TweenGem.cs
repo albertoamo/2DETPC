@@ -1,11 +1,14 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TweenGem : MonoBehaviour
 {
     public float height = 0.5f;
     public float timelapse = 1.5f;
     public Ease easing;
+
+    public SpriteRenderer gemImage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,8 +18,12 @@ public class TweenGem : MonoBehaviour
 
     void PlatformMove()
     {
+        gemImage.DOColor(Color.yellow, timelapse);
+
         transform.DOLocalMoveY(height, timelapse).SetEase(easing).OnComplete(() =>
         {
+            gemImage.DOColor(Color.white, timelapse);
+
             transform.DOLocalMoveY(-height, timelapse).SetEase(easing).OnComplete(() =>
             {
                 PlatformMove();

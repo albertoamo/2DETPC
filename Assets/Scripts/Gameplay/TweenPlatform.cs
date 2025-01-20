@@ -14,9 +14,9 @@ public class TweenPlatform : MonoBehaviour
 
     void PlatformMove()
     {
-        transform.DOMove(waypoint2.position, 5f).SetEase(Ease.Linear).OnComplete(() =>
+        transform.DOMove(waypoint2.position, 5f).SetDelay(1f).SetEase(Ease.Linear).OnComplete(() =>
         {
-            transform.DOMove(waypoint1.position, 5f).SetEase(Ease.Linear).OnComplete(() =>
+            transform.DOMove(waypoint1.position, 5f).SetDelay(1f).SetEase(Ease.Linear).OnComplete(() =>
             {
                 PlatformMove();
             });
