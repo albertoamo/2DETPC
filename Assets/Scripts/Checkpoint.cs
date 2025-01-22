@@ -22,6 +22,8 @@ public class Checkpoint : MonoBehaviour
         // Apply some rotation or effect to the icon
         // Hide it, when finished.
 
+        // Dot Tween
+
         Debug.Log("Saving the game");
     }
 }
