@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,6 +45,9 @@ public class PlayerHealthController : MonoBehaviour
 
         UIHealth health = FindFirstObjectByType<UIHealth>();
         health.UpdateHealth(lives);
+
+        hCtr.cRenderer.DOColor(Color.red, 0.5f).SetEase(Ease.InOutSine);
+        hCtr.cRenderer.DOColor(Color.white, 0.5f).SetDelay(0.5f).SetEase(Ease.InOutSine);
 
         Debug.Log("The player has taken damage.");
     }
