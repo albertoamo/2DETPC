@@ -18,12 +18,12 @@ public class LevelManager : MonoBehaviour
         LoadLevel(defaultLevel);
     }
     
-    public void LoadLevel(string levelName)
+    public void LoadLevel(string levelName, bool loadGame = false)
     {
-        StartCoroutine(LoadLevelAsync(levelName));
+        StartCoroutine(LoadLevelAsync(levelName, loadGame));
     }
 
-    IEnumerator LoadLevelAsync(string levelName)
+    IEnumerator LoadLevelAsync(string levelName, bool loadGame)
     {
         if (UIBlackScreen.INSTANCE == null)
         {
@@ -47,6 +47,12 @@ public class LevelManager : MonoBehaviour
                 activeLevel = levelName;
             }
         }
+
+        yield return new WaitForSecondsRealtime(2);
+
+        if (loadGame)
+            SerializeManager.INSTANCE.LoadGameData();
+
         UIBlackScreen.INSTANCE.FadeOut();
     }
 

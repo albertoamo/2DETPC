@@ -12,7 +12,26 @@ public class SerializeManager : MonoBehaviour
 
     public void LoadGame()
     {
+        // Save current level
+        string level = PlayerPrefs.GetString("level");
+
+        LevelManager.INSTANCE.LoadLevel(level, true);
+    }
+
+    public void LoadGameData()
+    {
         // Load all the serialized data into runtime memory
+        float posx = PlayerPrefs.GetFloat("posx");
+        float posy = PlayerPrefs.GetFloat("posy");
+        float posz = PlayerPrefs.GetFloat("posz");
+
+        int lives = PlayerPrefs.GetInt("health");
+
+        PlayerController playerCTR = FindObjectOfType<PlayerController>();
+        playerCTR.transform.position = new Vector3(posx, posy, posz);
+        playerCTR.cHealth.lives = lives;
+
+        Debug.Log("Loading scene data");
     }
 
     public void SaveGame()

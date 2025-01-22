@@ -212,6 +212,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1047641502}
+    - target: {fileID: 658117482756529433, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1047641505}
+    - target: {fileID: 658117482756529433, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 658117482756529433, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SerializeManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2133226425837945596, guid: 4b012e70f6b9d5a47a87bf9ab1523ced, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

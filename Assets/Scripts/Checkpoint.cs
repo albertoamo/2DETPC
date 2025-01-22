@@ -18,6 +18,10 @@ public class Checkpoint : MonoBehaviour
     {
         SerializeManager.INSTANCE.SaveGame();
 
+        // I want the UI to show the saving icon
+        // Apply some rotation or effect to the icon
+        // Hide it, when finished.
+
         Debug.Log("Saving the game");
     }
 }
