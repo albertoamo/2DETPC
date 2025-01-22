@@ -21,8 +21,8 @@ public class Checkpoint : MonoBehaviour
         // I want the UI to show the saving icon
         // Apply some rotation or effect to the icon
         // Hide it, when finished.
-
-        // Dot Tween
+        UILoadIcon loadicon = FindObjectOfType<UILoadIcon>();
+        loadicon.LoadingPopup();
 
         Debug.Log("Saving the game");
     }
