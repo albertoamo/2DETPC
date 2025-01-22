@@ -51,10 +51,12 @@ MonoBehaviour:
   speed: 5
   jumpForce: 5
   ceilDistance: 0.8
+  gravity: 2
   cAnimator: {fileID: 7579058799370873425}
   cRenderer: {fileID: 5137367686636358131}
   cRigidbody: {fileID: 4345099691417630445}
   cCollider: {fileID: 8376281689696851795}
+  cHealth: {fileID: 3195066030722181470}
 --- !u!114 &3195066030722181470
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController INSTANCE;
+
     // Variables en inspector
     public float speed = 5f;
     public float jumpForce = 3f;
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer cRenderer;
     public Rigidbody2D cRigidbody; // rigidbody
     public CapsuleCollider2D cCollider;
+    public PlayerHealthController cHealth;
 
     // Variable no inspector
     private Vector2 move;
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        INSTANCE = this;
         //cCollider = GetComponent<CapsuleCollider2D>();
     }
 
