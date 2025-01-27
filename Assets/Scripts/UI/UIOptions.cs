@@ -17,7 +17,7 @@ public class UIOptions : MonoBehaviour
         
     }
 
-    void ChangeVolume()
+    public void ChangeVolume()
     {
         //AudioListener listener = FindObjectOfType<AudioListener>();
         AudioListener.volume = slider.value;
