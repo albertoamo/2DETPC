@@ -49,6 +49,8 @@ public class PlayerHealthController : MonoBehaviour
         hCtr.cRenderer.DOColor(Color.red, 0.5f).SetEase(Ease.InOutSine);
         hCtr.cRenderer.DOColor(Color.white, 0.5f).SetDelay(0.5f).SetEase(Ease.InOutSine);
 
+        AudioManager.INSTANCE.source.PlayOneShot(AudioManager.INSTANCE.playerHurt);
+
         Debug.Log("The player has taken damage.");
     }
 
@@ -63,6 +65,8 @@ public class PlayerHealthController : MonoBehaviour
     public void Regenerate()
     {
         lives = lives + 1;
+
+        AudioManager.INSTANCE.source.PlayOneShot(AudioManager.INSTANCE.playerRegen);
 
         Debug.Log("The player has gained one hp.");
     }

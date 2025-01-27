@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour
 
             cAnimator.SetBool("Jump", true);
             Debug.Log("Jump");
+
+            AudioManager.INSTANCE.source.PlayOneShot(AudioManager.INSTANCE.playerJump);
         }
 
         cAnimator.SetFloat("Speed", Mathf.Abs(cRigidbody.linearVelocity.x));
