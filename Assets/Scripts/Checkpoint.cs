@@ -23,6 +23,7 @@ public class Checkpoint : MonoBehaviour
         // Hide it, when finished.
         UILoadIcon loadicon = FindObjectOfType<UILoadIcon>();
         loadicon.LoadingPopup();
+        enabled = false;
 
         Debug.Log("Saving the game");
     }

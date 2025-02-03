@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         INSTANCE = this;
-        LoadLevel(defaultLevel);
+        LoadLevel(defaultLevel, false);
     }
     
     public void LoadLevel(string levelName, bool loadGame = false)
@@ -25,10 +25,10 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadLevelAsync(string levelName, bool loadGame)
     {
-        if (UIBlackScreen.INSTANCE == null)
-        {
-            UIBlackScreen.INSTANCE = FindFirstObjectByType<UIBlackScreen>();
-        }
+        //if (UIBlackScreen.INSTANCE == null)
+        //{
+        //    UIBlackScreen.INSTANCE = FindFirstObjectByType<UIBlackScreen>();
+        //}
 
         UIBlackScreen.INSTANCE.FadeIn();
         {
@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
 
             Scene sceneToLoad = SceneManager.GetSceneByName(levelName);
 
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(1);
 
             if (sceneToLoad != null)
             {
@@ -47,8 +47,6 @@ public class LevelManager : MonoBehaviour
                 activeLevel = levelName;
             }
         }
-
-        yield return new WaitForSecondsRealtime(2);
 
         if (loadGame)
             SerializeManager.INSTANCE.LoadGameData();

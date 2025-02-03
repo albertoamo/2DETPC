@@ -21,7 +21,7 @@ public class UILoadIcon : MonoBehaviour
     public void LoadingPopup()
     {
         icon.enabled = true;
-        GetComponent<RectTransform>().DORotate(new Vector3(0, 0, -720f), 2f, RotateMode.FastBeyond360).OnComplete(() =>
+        GetComponent<RectTransform>().DORotate(new Vector3(0, 0, -1720f), 2f, RotateMode.FastBeyond360).OnComplete(() =>
         {
             icon.enabled = false;
             GetComponent<RectTransform>().rotation = Quaternion.identity;
