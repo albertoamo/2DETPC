@@ -25,10 +25,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadLevelAsync(string levelName, bool loadGame)
     {
-        //if (UIBlackScreen.INSTANCE == null)
-        //{
-        //    UIBlackScreen.INSTANCE = FindFirstObjectByType<UIBlackScreen>();
-        //}
+        GameStateManager.INSTANCE.ChangeState(GameStateManager.GameState.LOAD);
 
         UIBlackScreen.INSTANCE.FadeIn();
         {
@@ -49,7 +46,10 @@ public class LevelManager : MonoBehaviour
         }
 
         if (loadGame)
+        {
+            yield return new WaitForSecondsRealtime(1);
             SerializeManager.INSTANCE.LoadGameData();
+        }
 
         UIBlackScreen.INSTANCE.FadeOut();
     }

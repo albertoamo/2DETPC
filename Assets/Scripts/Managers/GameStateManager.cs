@@ -17,6 +17,7 @@ public class GameStateManager : MonoBehaviour
         WIN,
         OVER,
         OPTIONS,
+        LOAD,
         PAUSE
     }
 
@@ -72,6 +73,8 @@ public class GameStateManager : MonoBehaviour
             case GameState.OPTIONS: break;
             case GameState.OVER:
                 break;
+            case GameState.LOAD:
+                break;
             case GameState.PAUSE:
                 {
                     if (Input.GetKeyDown(KeyCode.Escape))
@@ -115,6 +118,12 @@ public class GameStateManager : MonoBehaviour
                     menu.gameObject.SetActive(true);
 
                     Time.timeScale = 0;
+                }
+                break;
+            case GameState.LOAD:
+                {
+                    //UIPauseMenu menu = FindObjectOfType<UIPauseMenu>(true);
+                    //menu.gameObject.SetActive(true);
                 }
                 break;
             case GameState.PAUSE:
@@ -164,6 +173,12 @@ public class GameStateManager : MonoBehaviour
                     Time.timeScale = 1;
                 }
                 break;
+            case GameState.LOAD:
+                {
+                    UIPauseMenu menu = FindObjectOfType<UIPauseMenu>(true);
+                    menu.gameObject.SetActive(false);
+                }
+                break;
             case GameState.PAUSE:
                 {
                     UIPauseMenu menu = FindObjectOfType<UIPauseMenu>(true);
@@ -180,7 +195,7 @@ public class GameStateManager : MonoBehaviour
     {
         LevelManager.INSTANCE.LoadLevel("spmap_gp1");
 
-        ChangeState(GameState.GAMEPLAY);
+        //ChangeState(GameState.GAMEPLAY);
     }
 
     public void ChangeToGameplayImmediate()

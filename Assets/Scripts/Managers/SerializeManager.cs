@@ -27,9 +27,8 @@ public class SerializeManager : MonoBehaviour
 
         int lives = PlayerPrefs.GetInt("health");
 
-        PlayerController playerCTR = FindObjectOfType<PlayerController>();
-        playerCTR.transform.position = new Vector3(posx, posy, posz);
-        playerCTR.cHealth.lives = lives;
+        PlayerController.INSTANCE.transform.position = new Vector3(posx, posy, posz);
+        PlayerController.INSTANCE.cHealth.lives = lives;
 
         Debug.Log("Loading scene data");
     }
