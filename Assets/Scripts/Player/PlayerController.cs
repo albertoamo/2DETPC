@@ -76,9 +76,13 @@ public class PlayerController : MonoBehaviour
     {
         // Accedo al componente Sprite Renderer
         if (move.x < 0)
-            cRenderer.flipX = true;
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
+        }
         else if (move.x > 0)
-            cRenderer.flipX = false;
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
     }
 
     // Ground detection

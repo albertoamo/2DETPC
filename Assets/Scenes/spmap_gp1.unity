@@ -27430,6 +27430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1756783562272784933, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
+      propertyPath: projectileSpeed
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 1853231033091216720, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: m_Name
       value: Player
@@ -27489,6 +27493,18 @@ PrefabInstance:
     - target: {fileID: 4639671211554786555, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
       propertyPath: jumpForce
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170393996693113531, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170393996693113531, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170393996693113531, guid: 50247d1c272b88f458f7c76e19c75e67, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3735292707494513626}
   - component: {fileID: 4639671211554786555}
   - component: {fileID: 3195066030722181470}
+  - component: {fileID: 1756783562272784933}
   - component: {fileID: 8376281689696851795}
   - component: {fileID: 4345099691417630445}
   m_Layer: 7
@@ -34,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7616817352766091459}
+  - {fileID: 9170393996693113531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4639671211554786555
@@ -72,6 +74,21 @@ MonoBehaviour:
   maxLives: 5
   lives: 0
   dmgDelay: 0.5
+--- !u!114 &1756783562272784933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853231033091216720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cae1e5b5b24134db54106a65f7fcec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1151662675722047902, guid: f9d128741c0b4e74aab82b638e2f0366, type: 3}
+  projectilePivot: {fileID: 9170393996693113531}
+  projectileSpeed: 20
 --- !u!70 &8376281689696851795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,6 +153,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &2989988466565929275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9170393996693113531}
+  m_Layer: 7
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9170393996693113531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2989988466565929275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.051, y: 0.078, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3735292707494513626}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7213470969028600255
 GameObject:
   m_ObjectHideFlags: 0
